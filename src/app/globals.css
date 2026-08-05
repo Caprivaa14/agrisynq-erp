@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────── */
+:root {
+  --color-navy:       #1B2A4A;
+  --color-navy-dark:  #0F172A;
+  --color-leaf:       #16a34a;
+  --color-gold:       #f59e0b;
+  --color-surface-bg: #F8FAFC;
+  --color-ink:        #0F172A;
+  --color-ink-muted:  #475569;
+  --color-border:     #E2E8F0;
+
+  --sidebar-width:    256px;
+  --topbar-height:    60px;
+  --radius:           0.5rem;
+  --transition:       150ms ease;
+}
+
+/* ─── Base Resets ────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-bg text-ink;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-ink;
+    letter-spacing: -0.015em;
+  }
+
+  a {
+    @apply text-leaf-600 hover:text-leaf-700 transition-colors;
+  }
+
+  /* Inputs & Selects */
+  input, textarea, select {
+    @apply font-sans;
+  }
+
+  /* Focus ring — consistent across all interactive elements */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-leaf-500 ring-offset-1;
+  }
+
+  /* Scrollbar — subtle, consistent */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-subtle;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-faint;
+  }
+}
+
+/* ─── Component Utilities ───────────────────────────── */
+@layer components {
+
+  /* Card */
+  .card {
+    @apply bg-surface-card rounded-lg shadow-card border border-surface-border;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply flex items-center justify-between mb-6;
+  }
+  .page-title {
+    @apply text-xl font-semibold text-ink;
+  }
+  .page-subtitle {
+    @apply text-sm text-ink-muted mt-0.5;
+  }
+
+  /* Data table — compact, high-density */
+  .data-table {
+    @apply w-full text-sm border-collapse;
+  }
+  .data-table thead th {
+    @apply bg-surface-subtle text-ink-muted font-medium text-xs uppercase tracking-wide
+           px-4 py-2.5 text-left border-b border-surface-border sticky top-0 z-10;
+  }
+  .data-table tbody tr {
+    @apply border-b border-surface-border hover:bg-surface-hover transition-colors;
+  }
+  .data-table tbody td {
+    @apply px-4 py-2.5 text-ink;
+  }
+  .data-table tbody tr:last-child {
+    @apply border-b-0;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium;
+  }
+  .badge-green  { @apply bg-success-100 text-success-600; }
+  .badge-gold   { @apply bg-warning-100 text-warning-600; }
+  .badge-red    { @apply bg-danger-100  text-danger-600;  }
+  .badge-navy   { @apply bg-navy-100    text-navy-700;    }
+  .badge-gray   { @apply bg-surface-subtle text-ink-muted; }
+  .badge-memo   { @apply bg-info-100 text-info-600 border border-info-500/20; }
+
+  /* Form label */
+  .form-label {
+    @apply block text-sm font-medium text-ink mb-1;
+  }
+  .form-hint {
+    @apply text-xs text-ink-muted mt-1;
+  }
+  .form-error {
+    @apply text-xs text-danger-600 mt-1;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-surface-border my-6;
+  }
+
+  /* Stat widget */
+  .stat-card {
+    @apply card p-5;
+  }
+  .stat-label {
+    @apply text-xs font-medium text-ink-muted uppercase tracking-wide;
+  }
+  .stat-value {
+    @apply text-2xl font-semibold text-ink mt-1;
+  }
+  .stat-sub {
+    @apply text-xs text-ink-muted mt-1;
+  }
+
+  /* Sidebar nav item */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium
+           text-navy-200 hover:bg-navy-800 hover:text-white transition-colors cursor-pointer;
+  }
+  .nav-item-active {
+    @apply bg-navy-800 text-white;
+  }
+  .nav-group-label {
+    @apply text-2xs font-semibold uppercase tracking-widest text-navy-400 px-3 mt-5 mb-1;
+  }
+}
+
+/* ─── Print styles ──────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  .data-table tbody tr { break-inside: avoid; }
+}
