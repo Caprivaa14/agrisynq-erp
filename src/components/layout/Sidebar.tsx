@@ -218,7 +218,7 @@ export default function Sidebar() {
         className="flex items-center justify-center h-[var(--topbar-height,64px)] px-4 bg-surface-card border-b border-surface-border shrink-0 hover:bg-surface-subtle transition-colors"
       >
         <Image 
-          src="/logos/agrisynq-logo.jpg" 
+          src="/logos/agrisynq_full.png" 
           alt="AgriSynq ERP" 
           width={400}
           height={267}

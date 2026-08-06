@@ -47,12 +47,12 @@ export default function LoginPage() {
       {/* Logo & brand */}
       <div className="text-center mb-8 flex flex-col items-center">
         <Image 
-          src="/logos/agrisynq_full.jpg" 
+          src="/logos/agrisynq_full.png" 
           alt="AgriSynq ERP"
           width={400}
           height={267}
           priority
-          className="h-24 w-auto object-contain rounded-xl shadow-panel border border-surface-border bg-black"
+          className="h-24 w-auto object-contain rounded-xl shadow-panel border border-surface-border bg-white"
         />
       </div>
 
