@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign In — AgriSynq ERP",
-  description: "Sign in to AgriSynq ERP",
+  title: "Sign In — FertiLedger ERP",
+  description: "Sign in to FertiLedger ERP — Stock. Accounts. Compliance. Connected.",
 };
 
 export default function AuthLayout({

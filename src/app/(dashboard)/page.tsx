@@ -8,7 +8,7 @@ import {
 import { formatCurrency } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Dashboard — AgriSynq ERP",
+  title: "Dashboard — FertiLedger ERP",
 };
 
 // ─── Stat Card ──────────────────────────────────────────────────────────────
@@ -89,7 +89,7 @@ export default async function DashboardPage() {
         <div>
           <h1 className="page-title">Dashboard</h1>
           <p className="page-subtitle">
-            AgriSynq ERP — Agricultural Trade &amp; Compliance
+            FertiLedger ERP — Stock. Accounts. Compliance. Connected.
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs text-ink-muted">

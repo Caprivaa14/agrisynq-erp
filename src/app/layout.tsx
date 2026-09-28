@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "AgriSynq ERP",
+  title: "FertiLedger ERP",
   description:
-    "Agricultural Trade, Inventory, Accounts & Compliance ERP. Stock. Accounts. Compliance. Connected.",
+    "Agricultural Trade, Inventory, Accounts & Compliance ERP — Stock. Accounts. Compliance. Connected.",
   icons: { icon: "/favicon.png" },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -15,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster richColors position="top-right" />
+      </body>
     </html>
   );
 }

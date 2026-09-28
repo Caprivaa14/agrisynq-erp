@@ -1,28 +1,21 @@
+// Farmers master-data page — server component
+// Fetches data server-side and passes to FarmersClient for interactivity.
+
 import type { Metadata } from "next";
-import { Sprout } from "lucide-react";
+import { redirect } from "next/navigation";
+import { getUserContext } from "@/actions/context";
+import { getFarmers } from "@/actions/farmers";
+import FarmersClient from "./FarmersClient";
 
-export const metadata: Metadata = {
-  title: "Farmer Master — AgriSynq ERP",
-};
+export const metadata: Metadata = { title: "Farmers" };
 
-export default function FarmersPage() {
-  return (
-    <div className="max-w-7xl mx-auto">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Farmer Master</h1>
-          <p className="page-subtitle">Farmer KYC, farm details, and purchase history</p>
-        </div>
-      </div>
-      <div className="card p-8 flex flex-col items-center justify-center text-center min-h-[320px] gap-4">
-        <div className="p-4 rounded-2xl bg-surface-subtle">
-          <Sprout className="w-8 h-8 text-ink-faint" strokeWidth={1.5} />
-        </div>
-        <div>
-          <p className="text-sm font-medium text-ink">Coming in Phase 2</p>
-          <p className="text-sm text-ink-muted mt-1 max-w-sm">Dedicated farmer records with masked Aadhaar, farm details, crop and season data, and full subsidised purchase history.</p>
-        </div>
-      </div>
-    </div>
-  );
+export default async function FarmersPage() {
+  try {
+    await getUserContext();
+  } catch {
+    redirect("/login");
+  }
+
+  const items = await getFarmers();
+  return <FarmersClient initialData={items} />;
 }

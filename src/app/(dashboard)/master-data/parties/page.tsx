@@ -1,28 +1,21 @@
+// Parties master-data page — server component
+// Fetches data server-side and passes to PartiesClient for interactivity.
+
 import type { Metadata } from "next";
-import { Users } from "lucide-react";
+import { redirect } from "next/navigation";
+import { getUserContext } from "@/actions/context";
+import { getParties } from "@/actions/parties";
+import PartiesClient from "./PartiesClient";
 
-export const metadata: Metadata = {
-  title: "Parties — AgriSynq ERP",
-};
+export const metadata: Metadata = { title: "Parties" };
 
-export default function PartiesPage() {
-  return (
-    <div className="max-w-7xl mx-auto">
-      <div className="page-header">
-        <div>
-          <h1 className="page-title">Parties</h1>
-          <p className="page-subtitle">Customers, suppliers, retailers, C&amp;F agents, FPOs</p>
-        </div>
-      </div>
-      <div className="card p-8 flex flex-col items-center justify-center text-center min-h-[320px] gap-4">
-        <div className="p-4 rounded-2xl bg-surface-subtle">
-          <Users className="w-8 h-8 text-ink-faint" strokeWidth={1.5} />
-        </div>
-        <div>
-          <p className="text-sm font-medium text-ink">Coming in Phase 2</p>
-          <p className="text-sm text-ink-muted mt-1 max-w-sm">Create and manage all trading partners including GST-registered customers, suppliers, licensed retailers, C&amp;F agents, cooperatives and FPOs.</p>
-        </div>
-      </div>
-    </div>
-  );
+export default async function PartiesPage() {
+  try {
+    await getUserContext();
+  } catch {
+    redirect("/login");
+  }
+
+  const items = await getParties();
+  return <PartiesClient initialData={items} />;
 }

@@ -1,9 +1,8 @@
 "use client";
 
 import { useFormState, useFormStatus } from "react-dom";
-import Image from "next/image";
 import { signInAction, type AuthActionState } from "@/actions/auth";
-import { Leaf, Eye, EyeOff, Loader2 } from "lucide-react";
+import { Eye, EyeOff, Loader2, Sprout } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -44,16 +43,27 @@ export default function LoginPage() {
 
   return (
     <div className="w-full max-w-md animate-fade-in">
-      {/* Logo & brand */}
-      <div className="text-center mb-8 flex flex-col items-center">
-        <Image 
-          src="/logos/agrisynq_full.png" 
-          alt="AgriSynq ERP"
-          width={400}
-          height={267}
-          priority
-          className="h-24 w-auto object-contain rounded-xl shadow-panel border border-surface-border bg-white"
-        />
+      {/* Brand header */}
+      <div className="text-center mb-8 flex flex-col items-center gap-3">
+        {/* FertiLedger icon mark */}
+        <div className="w-14 h-14 rounded-2xl bg-navy-950 flex items-center justify-center shadow-panel">
+          <Sprout className="w-7 h-7 text-leaf-400" strokeWidth={1.75} />
+        </div>
+        {/* Wordmark */}
+        <div className="flex items-baseline gap-0.5 select-none">
+          <span className="text-3xl font-bold tracking-tight text-navy-950">
+            Ferti
+          </span>
+          <span className="text-3xl font-bold tracking-tight text-leaf-600">
+            Ledger
+          </span>
+          <span className="text-sm font-semibold text-ink-muted ml-1.5 mb-0.5 tracking-wider">
+            ERP
+          </span>
+        </div>
+        <p className="text-xs text-ink-faint tracking-wide">
+          Stock. Accounts. Compliance. Connected.
+        </p>
       </div>
 
       {/* Card */}
@@ -61,7 +71,7 @@ export default function LoginPage() {
         <div className="mb-6">
           <h2 className="text-lg font-semibold text-ink">Sign in</h2>
           <p className="text-sm text-ink-muted mt-0.5">
-            Enter your credentials to access the ERP
+            Enter your credentials to access FertiLedger ERP
           </p>
         </div>
 
@@ -153,7 +163,7 @@ export default function LoginPage() {
 
       {/* Footer */}
       <p className="text-center text-xs text-ink-faint mt-6">
-        AgriSynq ERP · Agricultural Trade &amp; Compliance System
+        FertiLedger ERP · Agricultural Trade &amp; Compliance System
       </p>
     </div>
   );

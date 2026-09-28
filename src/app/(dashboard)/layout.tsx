@@ -5,7 +5,7 @@ import Sidebar from "@/components/layout/Sidebar";
 import Topbar from "@/components/layout/Topbar";
 
 export const metadata: Metadata = {
-  title: { template: "%s — AgriSynq ERP", default: "AgriSynq ERP" },
+  title: { template: "%s — FertiLedger ERP", default: "FertiLedger ERP" },
   description:
     "Agricultural Trade, Inventory, Accounts & Compliance ERP — Stock. Accounts. Compliance. Connected.",
 };

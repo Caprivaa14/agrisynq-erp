@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
@@ -133,6 +132,8 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "Users & Roles",     href: "/admin/users",           icon: Shield },
       { label: "Audit Log",         href: "/admin/audit",           icon: FileSearch },
       { label: "Period Locks",      href: "/admin/periods",         icon: FileCheck },
+      { label: "Tax Profiles",      href: "/admin/tax-profiles",    icon: Calculator },
+      { label: "Units of Measure",  href: "/admin/uom",             icon: Package },
       { label: "Settings",          href: "/admin/settings",        icon: Settings },
     ],
   },
@@ -213,18 +214,22 @@ export default function Sidebar() {
       )}
     >
       {/* Logo / Header block */}
-      <Link 
-        href="/" 
-        className="flex items-center justify-center h-[var(--topbar-height,64px)] px-4 bg-surface-card border-b border-surface-border shrink-0 hover:bg-surface-subtle transition-colors"
+      <Link
+        href="/"
+        className="flex items-center justify-center h-[var(--topbar-height,64px)] px-4 bg-navy-900 border-b border-navy-800 shrink-0 hover:bg-navy-800 transition-colors"
       >
-        <Image 
-          src="/logos/agrisynq_full.png" 
-          alt="AgriSynq ERP" 
-          width={400}
-          height={267}
-          priority
-          className="max-h-[48px] w-auto object-contain mix-blend-multiply"
-        />
+        {/* FertiLedger wordmark — brand-compliant inline SVG */}
+        <span className="flex items-baseline gap-0.5 select-none">
+          <span className="text-xl font-bold tracking-tight text-white">
+            Ferti
+          </span>
+          <span className="text-xl font-bold tracking-tight text-leaf-400">
+            Ledger
+          </span>
+          <span className="text-xs font-semibold text-navy-300 ml-1 mb-0.5 tracking-wider">
+            ERP
+          </span>
+        </span>
       </Link>
 
       {/* Navigation */}
