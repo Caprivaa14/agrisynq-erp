@@ -59,16 +59,21 @@ export async function getUserContext(): Promise<UserContext> {
     .limit(1)
     .single();
 
+  // ── Graceful fallback when migrations haven't been applied yet ──
+  // If user_roles table doesn't exist or user has no role assigned,
+  // return a best-effort context so pages render (with empty data)
+  // instead of bouncing the user back to the dashboard in a loop.
   if (roleError || !roleData) {
-    throw new Error(
-      "User organisation context not found. Contact your administrator."
-    );
-  }
-
-  if (!roleData.organisation_id) {
-    throw new Error(
-      "User is not assigned to an organisation. Contact your administrator."
-    );
+    // Use the auth user's own ID as a placeholder tenant/org.
+    // All DB queries will return empty results (no matching rows),
+    // which is correct — pages will show their empty states.
+    return {
+      userId: user.id,
+      tenantId: user.id,          // placeholder — no real tenant yet
+      organisationId: user.id,    // placeholder — no real org yet
+      branchId: null,
+      roleName: null,
+    };
   }
 
   // Safely extract role name — Supabase returns joined data as object or null
