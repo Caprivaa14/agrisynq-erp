@@ -216,17 +216,23 @@ export default function Sidebar() {
       {/* Logo / Header block */}
       <Link
         href="/"
-        className="flex items-center justify-center h-[var(--topbar-height,64px)] px-4 bg-navy-900 border-b border-navy-800 shrink-0 hover:bg-navy-800 transition-colors"
+        className="flex items-center justify-center gap-2.5 h-[var(--topbar-height,64px)] px-4 bg-navy-900 border-b border-navy-800 shrink-0 hover:bg-navy-800 transition-colors"
       >
-        {/* FertiLedger wordmark — brand-compliant inline SVG */}
-        <span className="flex items-baseline gap-0.5 select-none">
-          <span className="text-xl font-bold tracking-tight text-white">
-            Ferti
+        {/* FertiLedger brand mark + wordmark */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logo-mark.svg"
+          alt="FertiLedger ERP"
+          className="h-9 w-9 shrink-0 select-none"
+        />
+        <span className="flex items-baseline gap-1.5 select-none">
+          <span
+            className="text-xl font-bold tracking-wide text-[#F7F0DC]"
+            style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+          >
+            FertiLedger
           </span>
-          <span className="text-xl font-bold tracking-tight text-leaf-400">
-            Ledger
-          </span>
-          <span className="text-xs font-semibold text-navy-300 ml-1 mb-0.5 tracking-wider">
+          <span className="text-[10px] font-semibold tracking-[0.2em] text-[#E2BC62]">
             ERP
           </span>
         </span>

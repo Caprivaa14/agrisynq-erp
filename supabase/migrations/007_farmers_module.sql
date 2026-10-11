@@ -1,6 +1,6 @@
 -- ============================================================
 -- Migration 007: Farmers Module
--- AgriSynq ERP
+-- FertiLedger ERP
 -- ============================================================
 
 CREATE TABLE farmers (

@@ -1,6 +1,6 @@
 -- ============================================================
 -- Migration 003: Users, Roles & Permissions
--- AgriSynq ERP
+-- FertiLedger ERP
 -- ============================================================
 -- NOTE: Supabase Auth creates auth.users automatically.
 -- user_profiles extends it with tenant linkage.

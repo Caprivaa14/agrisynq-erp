@@ -1,6 +1,6 @@
 -- ============================================================
 -- Migration 004: Row-Level Security (RLS) — Base Policies
--- AgriSynq ERP — SUPABASE COMPATIBLE VERSION
+-- FertiLedger ERP — SUPABASE COMPATIBLE VERSION
 -- ============================================================
 -- FIXES APPLIED:
 --   1. Helper functions moved to PUBLIC schema (auth schema is

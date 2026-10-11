@@ -1,6 +1,6 @@
 -- ============================================================
 -- Migration 005: Seed System Roles & Permissions
--- AgriSynq ERP
+-- FertiLedger ERP
 -- ============================================================
 -- This seeds the permissions reference table and creates
 -- system role templates. Actual tenant roles are created

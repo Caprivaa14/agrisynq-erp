@@ -2,7 +2,7 @@
 
 import { useFormState, useFormStatus } from "react-dom";
 import { signInAction, type AuthActionState } from "@/actions/auth";
-import { Eye, EyeOff, Loader2, Sprout } from "lucide-react";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -45,22 +45,12 @@ export default function LoginPage() {
     <div className="w-full max-w-md animate-fade-in">
       {/* Brand header */}
       <div className="text-center mb-8 flex flex-col items-center gap-3">
-        {/* FertiLedger icon mark */}
-        <div className="w-14 h-14 rounded-2xl bg-navy-950 flex items-center justify-center shadow-panel">
-          <Sprout className="w-7 h-7 text-leaf-400" strokeWidth={1.75} />
-        </div>
-        {/* Wordmark */}
-        <div className="flex items-baseline gap-0.5 select-none">
-          <span className="text-3xl font-bold tracking-tight text-navy-950">
-            Ferti
-          </span>
-          <span className="text-3xl font-bold tracking-tight text-leaf-600">
-            Ledger
-          </span>
-          <span className="text-sm font-semibold text-ink-muted ml-1.5 mb-0.5 tracking-wider">
-            ERP
-          </span>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logo-full.svg"
+          alt="FertiLedger ERP"
+          className="h-20 w-auto select-none"
+        />
         <p className="text-xs text-ink-faint tracking-wide">
           Stock. Accounts. Compliance. Connected.
         </p>
