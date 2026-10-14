@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Calculator } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Trial Balance — AgriSynq ERP",
+  title: "Trial Balance — FertiLedger ERP",
 };
 
 export default function TrialBalancePage() {

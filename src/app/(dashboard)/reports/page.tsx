@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BarChart3 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Reports — AgriSynq ERP",
+  title: "Reports — FertiLedger ERP",
 };
 
 export default function ReportsPage() {

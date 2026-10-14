@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FilePlus2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Import FMS Data — AgriSynq ERP",
+  title: "Import FMS Data — FertiLedger ERP",
 };
 
 export default function FmsImportPage() {

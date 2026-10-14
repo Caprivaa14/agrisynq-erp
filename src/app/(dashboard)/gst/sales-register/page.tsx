@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ReceiptText } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "GST Sales Register — AgriSynq ERP",
+  title: "GST Sales Register — FertiLedger ERP",
 };
 
 export default function GstSalesRegisterPage() {

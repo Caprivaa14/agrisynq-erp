@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PiggyBank } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Accounts Payable — AgriSynq ERP",
+  title: "Accounts Payable — FertiLedger ERP",
 };
 
 export default function AccountsPayablePage() {

@@ -82,6 +82,16 @@ export default async function DashboardPage() {
     activeLicences:   0,
   };
 
+  // True only when both Supabase values exist and are not placeholders
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+  const isConfigured =
+    supabaseUrl.startsWith("https://") &&
+    supabaseUrl.includes(".supabase.co") &&
+    !supabaseUrl.includes("xxxx") &&
+    supabaseKey.length > 40 &&
+    !supabaseKey.toLowerCase().includes("your");
+
   return (
     <div className="max-w-7xl mx-auto">
       {/* Page header */}
@@ -230,23 +240,25 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      {/* Setup notice — shown until Supabase is configured */}
-      <div className="mt-6 border border-gold-200 bg-gold-50 rounded-lg px-5 py-4 flex items-start gap-3">
-        <AlertCircle className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
-        <div>
-          <p className="text-sm font-medium text-gold-800">
-            Supabase not yet configured
-          </p>
-          <p className="text-sm text-gold-700 mt-0.5">
-            Update <code className="font-mono text-xs bg-gold-100 px-1 py-0.5 rounded">.env.local</code> with your{" "}
-            <strong>NEXT_PUBLIC_SUPABASE_URL</strong> and{" "}
-            <strong>NEXT_PUBLIC_SUPABASE_ANON_KEY</strong>, then run the
-            migration SQL files in{" "}
-            <code className="font-mono text-xs bg-gold-100 px-1 py-0.5 rounded">supabase/migrations/</code>{" "}
-            against your Supabase project to activate all features.
-          </p>
+      {/* Setup notice — shown only until Supabase values are filled in */}
+      {!isConfigured && (
+        <div className="mt-6 border border-gold-200 bg-gold-50 rounded-lg px-5 py-4 flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+          <div>
+            <p className="text-sm font-medium text-gold-800">
+              Supabase not yet configured
+            </p>
+            <p className="text-sm text-gold-700 mt-0.5">
+              Update <code className="font-mono text-xs bg-gold-100 px-1 py-0.5 rounded">.env.local</code> with your{" "}
+              <strong>NEXT_PUBLIC_SUPABASE_URL</strong> and{" "}
+              <strong>NEXT_PUBLIC_SUPABASE_ANON_KEY</strong>, then run the
+              migration SQL files in{" "}
+              <code className="font-mono text-xs bg-gold-100 px-1 py-0.5 rounded">supabase/migrations/</code>{" "}
+              against your Supabase project to activate all features.
+            </p>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

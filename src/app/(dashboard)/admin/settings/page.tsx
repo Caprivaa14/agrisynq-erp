@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Settings } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Settings — AgriSynq ERP",
+  title: "Settings — FertiLedger ERP",
 };
 
 export default function SettingsPage() {

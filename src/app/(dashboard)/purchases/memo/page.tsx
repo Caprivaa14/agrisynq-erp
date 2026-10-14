@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FilePlus2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Memo Purchases — AgriSynq ERP",
+  title: "Memo Purchases — FertiLedger ERP",
 };
 
 export default function PurchaseMemoPage() {

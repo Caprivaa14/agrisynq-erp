@@ -1,6 +1,6 @@
 -- ============================================================
 -- Migration 001: Enable required PostgreSQL extensions
--- AgriSynq ERP
+-- FertiLedger ERP
 -- ============================================================
 -- Run this in: Supabase Dashboard → SQL Editor
 -- Or via: supabase db push

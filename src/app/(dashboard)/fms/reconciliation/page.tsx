@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RefreshCcw } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "FMS Reconciliation — AgriSynq ERP",
+  title: "FMS Reconciliation — FertiLedger ERP",
 };
 
 export default function FmsReconciliationPage() {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Users & Roles — AgriSynq ERP",
+  title: "Users & Roles — FertiLedger ERP",
 };
 
 export default function UsersPage() {

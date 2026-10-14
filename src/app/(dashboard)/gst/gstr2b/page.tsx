@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RefreshCcw } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "GSTR-2B Reconciliation — AgriSynq ERP",
+  title: "GSTR-2B Reconciliation — FertiLedger ERP",
 };
 
 export default function Gstr2bPage() {

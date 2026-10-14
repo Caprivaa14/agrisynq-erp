@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FileSearch } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Bank Statements — AgriSynq ERP",
+  title: "Bank Statements — FertiLedger ERP",
 };
 
 export default function BankStatementsPage() {

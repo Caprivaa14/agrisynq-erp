@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ShoppingCart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "GST Purchase Register — AgriSynq ERP",
+  title: "GST Purchase Register — FertiLedger ERP",
 };
 
 export default function GstPurchaseRegisterPage() {

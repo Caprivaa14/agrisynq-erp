@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Cancel & Reissue — AgriSynq ERP",
+  title: "Cancel & Reissue — FertiLedger ERP",
 };
 
 export default function FmsReissuePage() {

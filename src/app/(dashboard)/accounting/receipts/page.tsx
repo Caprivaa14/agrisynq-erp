@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CreditCard } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Receipts — AgriSynq ERP",
+  title: "Receipts — FertiLedger ERP",
 };
 
 export default function ReceiptsPage() {

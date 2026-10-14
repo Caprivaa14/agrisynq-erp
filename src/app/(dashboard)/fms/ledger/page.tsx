@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ScrollText } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "FMS Ledger — AgriSynq ERP",
+  title: "FMS Ledger — FertiLedger ERP",
 };
 
 export default function FmsLedgerPage() {

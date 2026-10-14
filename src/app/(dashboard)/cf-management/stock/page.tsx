@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Boxes } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "C&F Stock Register — AgriSynq ERP",
+  title: "C&F Stock Register — FertiLedger ERP",
 };
 
 export default function CfStockPage() {

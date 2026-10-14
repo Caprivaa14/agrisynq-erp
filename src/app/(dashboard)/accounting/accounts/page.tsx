@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Chart of Accounts — AgriSynq ERP",
+  title: "Chart of Accounts — FertiLedger ERP",
 };
 
 export default function ChartOfAccountsPage() {

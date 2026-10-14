@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ScrollText } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Vouchers — AgriSynq ERP",
+  title: "Vouchers — FertiLedger ERP",
 };
 
 export default function VouchersPage() {

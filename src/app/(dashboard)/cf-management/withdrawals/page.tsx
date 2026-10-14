@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArrowLeftRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "C&F Withdrawals — AgriSynq ERP",
+  title: "C&F Withdrawals — FertiLedger ERP",
 };
 
 export default function CfWithdrawalsPage() {

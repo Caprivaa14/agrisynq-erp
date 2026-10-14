@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Accounts Receivable — AgriSynq ERP",
+  title: "Accounts Receivable — FertiLedger ERP",
 };
 
 export default function AccountsReceivablePage() {

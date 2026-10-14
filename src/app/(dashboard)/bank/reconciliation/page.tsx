@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RefreshCcw } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Bank Reconciliation — AgriSynq ERP",
+  title: "Bank Reconciliation — FertiLedger ERP",
 };
 
 export default function BankReconciliationPage() {
