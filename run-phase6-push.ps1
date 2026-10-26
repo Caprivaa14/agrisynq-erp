@@ -24,7 +24,7 @@ Write-Host ""
 Write-Host "=== STEP 3: Git Commit + Push ===" -ForegroundColor Cyan
 git add -A
 git status
-git commit -m "feat(phase6): Logistics - Transporters, Stock Transfers, Delivery Challans with E-Way Bill support"
+git commit -m "feat(phase7): Accounting Engine - Chart of Accounts, Journal Vouchers, Payment Receipts, AR/AP Ageing, Trial Balance"
 git push upstream main
 
 Write-Host ""
