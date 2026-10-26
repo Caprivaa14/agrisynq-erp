@@ -73,6 +73,14 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
+    label: "Logistics",
+    items: [
+      { label: "Transporters",       href: "/logistics/transporters",  icon: Truck },
+      { label: "Stock Transfers",    href: "/logistics/transfers",     icon: ArrowLeftRight },
+      { label: "Delivery Challans",  href: "/logistics/challans",      icon: FileText },
+    ],
+  },
+  {
     label: "Inventory",
     items: [
       { label: "Stock Ledger",       href: "/inventory/ledger",       icon: BookOpen },
